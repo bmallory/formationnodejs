@@ -1,11 +1,11 @@
 const myPromis = new Promise(function(resolve, reject) {
  setTimeout(() => {
-     resolve('fine 1')
+     reject('nok 1')
  })
 })
 .then( function whenOk(response){
     console.log("log 1", response)
-    new Promise( function (resolve, reject){
+    return new Promise( function (resolve, reject){
         setTimeout(() => {
             resolve('fine 2')
         }, 1000)
